@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://www.csapi.org/schema/parlayx/ussd/send/v1_0/local" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.csapi.org/schema/parlayx/ussd/send/v1_0/local">
+
+<xs:element name="sendUssd" nillable="true" type="tns:sendUssd"></xs:element>
+
+<xs:element name="sendUssdResponse" nillable="true" type="tns:sendUssdResponse"></xs:element>
+
+<xs:complexType name="sendUssd">
+<xs:sequence>
+<xs:element name="msgType" type="xs:int"></xs:element>
+<xs:element name="senderCB" type="xs:string"></xs:element>
+<xs:element name="receiveCB" type="xs:string"></xs:element>
+<xs:element name="ussdOpType" type="xs:int"></xs:element>
+<xs:element name="msIsdn" type="xs:string"></xs:element>
+<xs:element name="serviceCode" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="codeScheme" type="xs:int"></xs:element>
+<xs:element name="ussdString" type="xs:string"></xs:element>
+<xs:element name="endPoint" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="extenionInfo" type="tns:NamedParameterList" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NamedParameterList">
+<xs:sequence>
+<xs:element name="item" type="tns:NamedParameter" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="NamedParameter">
+<xs:sequence>
+<xs:element name="key" type="xs:string"></xs:element>
+<xs:element name="value" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sendUssdResponse">
+<xs:sequence>
+<xs:element name="result" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
